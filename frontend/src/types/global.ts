@@ -1,0 +1,1 @@
+export type ActionType<T = any> = { type: string, payload: T };
