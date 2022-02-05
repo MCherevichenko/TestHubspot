@@ -3,18 +3,30 @@ import { ActionType } from "../../types/global";
 
 const defaultStatus = 'Waiting';
 
+interface IBaseProperty {
+    value: string
+}
+
+interface IProperties {
+    [propertyName: string]: IBaseProperty;
+  }
+  
+interface IData {
+    properties: IProperties;
+}
+
 export type FormStoreType = {
     status: string,
     isFetching: boolean,
     error: string | null,
-    data: object,
+    data: IData | null,
 }
 
 const initialState = {
     status: '',
     isFetching: false,
     error: null,
-    data: [],
+    data: null,
 }
 
 const formReducer = (state: FormStoreType = initialState, action: ActionType ) => {

@@ -3,6 +3,8 @@ import Api from '../api/api';
 import { SEND_EMAIL, EMAIL_SUCCEEDED, EMAIL_REJECTED } from "../actions/actions";
 import { ActionType } from '../types/global';
 
+
+
 export function* axiosPostsAsync({ type, payload}: ActionType) {
     try {
         const { data } = yield call(Api.post, "/", { email: payload });
